@@ -109,3 +109,8 @@ repoServer:
 #         - name: custom-tools
 #           mountPath: /usr/local/bin/vela
 #           subPath: vela
+  volumes: 
+   - name: custom-tools
+     configMap:
+       name: vela-cmp
+
