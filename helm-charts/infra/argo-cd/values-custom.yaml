@@ -62,9 +62,9 @@ repoServer:
         - bash
         - '-c'
         - |
-        #!/usr/bin/env bash
-        set -eo pipefail
-        curl -fsSl https://kubevela.io/script/install.sh | bash -s 1.6.4
+          #!/usr/bin/env bash
+          set -eo pipefail
+          curl -fsSl https://kubevela.io/script/install.sh | bash -s 1.6.4
       env:
         - name: VELA_INSTALL_DIR
           value: /custom-tools
