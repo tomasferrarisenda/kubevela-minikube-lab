@@ -12,7 +12,6 @@ spec:
   project: default
   source:
     path: helm-charts/infra/vela-core
-
     helm:
       valueFiles:
         - values-custom.yaml
