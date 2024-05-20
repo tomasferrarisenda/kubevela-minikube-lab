@@ -67,6 +67,14 @@ repoServer:
   env:
   - name: KUBECONFIG
     value: /home/argocd/.kube/config
+
+  volumeMounts:
+  - mountPath: /usr/local/bin/vela
+    name: custom-tools
+    subPath: vela
+  - mountPath: /home/argocd/.kube/
+    name: vela-kubeconfig
+
   initContainers:
   - name: download-tools
     image: oamdev/argo-tool:v1
@@ -76,6 +84,7 @@ repoServer:
     volumeMounts:
     - mountPath: /custom-tools
       name: custom-tools
+
   volumes:
   - name: custom-tools
     emptyDir: {}
