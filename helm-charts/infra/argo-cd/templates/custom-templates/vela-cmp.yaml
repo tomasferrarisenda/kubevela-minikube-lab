@@ -7,32 +7,30 @@ metadata:
 data:
   config: |
     apiVersion: v1
-    kind: Config
-    preferences: {}
-    current-context: minikube
     clusters:
     - cluster:
         certificate-authority: /home/tomas/.minikube/ca.crt
         extensions:
         - extension:
-            last-update: Mon, 20 May 2024 20:51:31 CEST
+            last-update: Mon, 20 May 2024 22:21:10 CEST
             provider: minikube.sigs.k8s.io
             version: v1.31.2
           name: cluster_info
-        server: https://127.0.0.1:65254
+        server: https://127.0.0.1:59450
       name: minikube
     contexts:
     - context:
         cluster: minikube
         extensions:
         - extension:
-            last-update: Mon, 20 May 2024 20:51:31 CEST
+            last-update: Mon, 20 May 2024 22:21:10 CEST
             provider: minikube.sigs.k8s.io
             version: v1.31.2
           name: context_info
-        namespace: argocd
+        namespace: default
         user: minikube
       name: minikube
+    kind: Config
     users:
     - name: minikube
       user:
