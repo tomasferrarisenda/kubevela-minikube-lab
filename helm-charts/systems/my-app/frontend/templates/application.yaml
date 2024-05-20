@@ -10,7 +10,7 @@ spec:
         name: frontend
         image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
       traits:
-        - type: autoscaler
+        - type: horizontal-pod-autoscaler
           properties:
             min: 3 # Default is 1
             # max: # Default is 4
