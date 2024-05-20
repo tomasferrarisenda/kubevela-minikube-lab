@@ -53,8 +53,35 @@ configs:
       accounts.backend.password: '$2a$10$IaI7yXLoWiQ.XlzZmAUxFOhEWgK8Fm21bZ/vtUBufK9yZnt7EUsri' # backend
       accounts.database.password: '$2a$10$4NRIsDFel0OaYPy9bAgedeycShVrK2kTNUap4TzHoFm1bUpjuE/z2' # database
 
-# Integration with KubeVela. See: https://kubevela.io/blog/2023/01/06/kubevela-argocd-integration/#2-register-the-plugin-sidecar
 repoServer:
+  # Integration with KubeVela. See: https://kubevela.io/blog/2023/01/06/kubevela-argocd-integration/#2-register-the-plugin-sidecar
+  initContainers:
+    - name: kubevela
+      image: nginx:1.21.6
+      command:
+        - bash
+        - '-c'
+        - |
+        #!/usr/bin/env bash
+        set -eo pipefail
+        curl -fsSl https://kubevela.io/script/install.sh | bash -s 1.6.4
+      env:
+        - name: VELA_INSTALL_DIR
+          value: /custom-tools
+      resources:
+        limits:
+        cpu: 50m
+        memory: 64Mi
+        requests:
+        cpu: 10m
+        memory: 32Mi
+      volumeMounts:
+        - name: custom-tools
+          mountPath: /custom-tools
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      imagePullPolicy: IfNotPresent
+  # Integration with KubeVela. See: https://kubevela.io/blog/2023/01/06/kubevela-argocd-integration/#2-register-the-plugin-sidecar
   extraContainers: 
     - name: vela
       image: nginx
@@ -82,29 +109,3 @@ repoServer:
         - name: custom-tools
           mountPath: /usr/local/bin/vela
           subPath: vela
-  initContainers:
-    - name: kubevela
-      image: nginx:1.21.6
-      command:
-        - bash
-        - '-c'
-        - |
-        #!/usr/bin/env bash
-        set -eo pipefail
-        curl -fsSl https://kubevela.io/script/install.sh | bash -s 1.6.4
-      env:
-        - name: VELA_INSTALL_DIR
-          value: /custom-tools
-      resources:
-        limits:
-        cpu: 50m
-        memory: 64Mi
-        requests:
-        cpu: 10m
-        memory: 32Mi
-      volumeMounts:
-        - name: custom-tools
-          mountPath: /custom-tools
-      terminationMessagePath: /dev/termination-log
-      terminationMessagePolicy: File
-      imagePullPolicy: IfNotPresent
