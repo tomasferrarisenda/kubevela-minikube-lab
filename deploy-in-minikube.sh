@@ -6,8 +6,7 @@
 # read -p "Enter your GitHub auth client secret: " AUTH_GITHUB_CLIENT_SECRET
 
 # Start cluster. Extra beefy beause Backstage is a bit heavy.
-minikube start
-# minikube start --cpus 4 --memory 4096
+minikube start --cpus 4 --memory 4096
 
 # Install ArgoCD
 helm install argocd -n argocd helm-charts/infra/argo-cd --values helm-charts/infra/argo-cd/values-custom.yaml --dependency-update --create-namespace
