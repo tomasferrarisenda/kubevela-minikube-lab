@@ -1,0 +1,18 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}-application
+spec:
+  components:
+    - name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}
+      type: webservice
+      properties:
+        image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
+        ports:
+        - port: 80
+          expose: true
+      traits:
+        - type: gateway     
+          properties:
+            http: 
+              "/": 80 
