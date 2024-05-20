@@ -2,7 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}-application
-  namespace: vela-system
+  # namespace: vela-system
 spec:
   components:
     - name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}
