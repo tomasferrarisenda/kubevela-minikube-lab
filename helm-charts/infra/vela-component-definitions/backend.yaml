@@ -86,4 +86,4 @@ spec:
     #     parameter: {
     #         image: string
     #         cmd?: [...string]
-        }
+    #     }
