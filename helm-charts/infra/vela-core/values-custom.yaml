@@ -1,4 +1,7 @@
 multicluster:
-  clusterGateway:
-    secureTLS:
-      enabled: false
+  enabled: false
+
+# multicluster:
+#   clusterGateway:
+#     secureTLS:
+#       enabled: false
