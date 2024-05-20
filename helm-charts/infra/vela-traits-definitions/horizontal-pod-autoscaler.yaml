@@ -7,6 +7,7 @@ metadata:
 spec:
   appliesToWorkloads:
     - frontend
+    - backend
   schematic:
     cue:
       template: |
@@ -35,7 +36,7 @@ spec:
             }
         }
         parameter: {
-            min:     *2 | int
-            max:     *6 | int
+            min:     *1 | int
+            max:     *4 | int
             cpuUtil: *80 | int
         }

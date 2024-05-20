@@ -1,0 +1,22 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}-application
+spec:
+  components:
+    - name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}
+      type: frontend
+      properties:
+        name: frontend
+        image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
+      traits:
+        - type: autoscaler
+          properties:
+            min: 3 # Default is 1
+            # max: # Default is 4
+            cpuUtil: # Default is 80
+        # - type: ingress
+        #   properties:
+        #     domain: localhost
+        #     http:
+        #       "/": 80

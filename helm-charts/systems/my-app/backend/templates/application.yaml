@@ -1,0 +1,31 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: devops-toolkit
+spec:
+  components:
+    - name: backend
+      type: backend
+      properties:
+        image: alpine
+        cmd:
+          - sleep
+          - "1000000"
+
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}-application
+spec:
+  components:
+    - name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}
+      type: backend
+      properties:
+        name: backend
+        image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
+      traits:
+        - type: autoscaler
+          properties:
+            # min: 3 # Default is 1
+            # max: # Default is 4
+            # cpuUtil: # Default is 80
