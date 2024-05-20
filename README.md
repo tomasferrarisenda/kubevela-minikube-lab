@@ -17,7 +17,7 @@
     <a  href="/docs/readme_es.md">Versión en Español</a>
 </p> -->
 
-<p title="Banner" align="center"> <img src="https://i.imgur.com/FbsIwSJ.jpg"> </p>
+<!-- <p title="Banner" align="center"> <img src="https://i.imgur.com/FbsIwSJ.jpg"> </p> -->
 
 # INDEX
 
