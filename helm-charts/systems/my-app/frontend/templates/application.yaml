@@ -10,11 +10,11 @@ spec:
         name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}
         image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
       traits:
-        - type: horizontal-pod-autoscaler
-          properties:
-            min: 3 # Default is 1
-            # max: # Default is 4
-            cpuUtil: # Default is 80
+        # - type: horizontal-pod-autoscaler
+        #   properties:
+        #     min: 3 # Default is 1
+        #     # max: # Default is 4
+        #     cpuUtil: # Default is 80
         # - type: ingress
         #   properties:
         #     domain: localhost
