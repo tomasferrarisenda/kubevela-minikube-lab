@@ -37,6 +37,9 @@
 </br>
 
 # INTRODUCTION
+
+[this video](https://youtu.be/2CBu6sOTtwk?si=F7KyOlk-5WXIyDN5)
+KubeVela dropped support for the kube schematic.
 <!-- This is a spin-off of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) DevOps project. While working on the [Braindamage Edition](https://github.com/tferrari92/automate-all-the-things-braindamage) - which will include a Developer Portal built with Backstage - I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
 
 Backstage is a framework for creating developer portals. This developer portal should act as a centralized hub for your organization, providing access to documentation, infrastructure, tooling, and code standards. It gives developers everything they need to create and manage their projects in a consistent and standardized manner. If you are new to Backstage, I invite you to read [this brilliant series of articles](https://www.kosli.com/blog/evaluating-backstage-1-why-backstage/) by Alexandre Couedelo.
@@ -61,7 +64,7 @@ For a simpler implementation of Backstage check out the [Backstage Minikube Lab 
 </br>
 
 # INITIAL SETUP
-Before deploying Backstage in a Kubernetes environment (Minikube), we need to build it locally.
+<!-- Before deploying Backstage in a Kubernetes environment (Minikube), we need to build it locally. -->
 
 <!-- Install nvm:
 ```bash
