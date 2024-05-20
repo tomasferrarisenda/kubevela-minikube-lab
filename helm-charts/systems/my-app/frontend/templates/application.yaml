@@ -7,7 +7,7 @@ spec:
     - name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}
       type: frontend
       properties:
-        name: frontend
+        name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}
         image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
       traits:
         - type: horizontal-pod-autoscaler
