@@ -21,9 +21,10 @@ replace_string_in_file "application-code/my-app/backend/catalog-info.yaml" "$git
 replace_string_in_file "application-code/my-app/frontend/catalog-info.yaml" "$github_username" "$dockerhub_username"
 replace_string_in_file "application-code/my-app/redis/catalog-info.yaml" "$github_username" "$dockerhub_username"
 
-replace_string_in_file "argo-cd/applications/infra/backstage-application.yaml" "$github_username" "$dockerhub_username"
-replace_string_in_file "argo-cd/applications/infra/grafana-application.yaml" "$github_username" "$dockerhub_username"
-replace_string_in_file "argo-cd/applications/infra/prometheus-application.yaml" "$github_username" "$dockerhub_username"
+# replace_string_in_file "argo-cd/applications/infra/backstage-application.yaml" "$github_username" "$dockerhub_username"
+# replace_string_in_file "argo-cd/applications/infra/grafana-application.yaml" "$github_username" "$dockerhub_username"
+# replace_string_in_file "argo-cd/applications/infra/prometheus-application.yaml" "$github_username" "$dockerhub_username"
+# replace_string_in_file "argo-cd/applications/infra/kubevela-application.yaml" "$github_username" "$dockerhub_username"
 replace_string_in_file "argo-cd/applications/systems/my-app/backend/application-dev.yaml" "$github_username" "$dockerhub_username"
 replace_string_in_file "argo-cd/applications/systems/my-app/backend/application-prod.yaml" "$github_username" "$dockerhub_username"
 replace_string_in_file "argo-cd/applications/systems/my-app/backend/application-stage.yaml" "$github_username" "$dockerhub_username"
@@ -36,10 +37,10 @@ replace_string_in_file "argo-cd/applications/systems/my-app/redis/application-st
 replace_string_in_file "argo-cd/self-manage/argocd-app-of-apps-application.yaml" "$github_username" "$dockerhub_username"
 replace_string_in_file "argo-cd/self-manage/argocd-application.yaml" "$github_username" "$dockerhub_username"
 
-replace_string_in_file "backstage/my-backstage/app-config.yaml" "$github_username" "$dockerhub_username"
-replace_string_in_file "backstage/my-backstage/build-push-image.sh" "$github_username" "$dockerhub_username"
+# replace_string_in_file "backstage/my-backstage/app-config.yaml" "$github_username" "$dockerhub_username"
+# replace_string_in_file "backstage/my-backstage/build-push-image.sh" "$github_username" "$dockerhub_username"
 
-replace_string_in_file "helm-charts/infra/backstage/values-custom.yaml" "$github_username" "$dockerhub_username"
+# replace_string_in_file "helm-charts/infra/backstage/values-custom.yaml" "$github_username" "$dockerhub_username"
 
 
 echo -n "That's it! All necessary files were updated with the info you provided. You can go back to the README and carry on with the guide."
