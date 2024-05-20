@@ -1,27 +1,40 @@
-# # Integration with KubeVela. See: https://kubevela.io/blog/2023/01/06/kubevela-argocd-integration/#1-write-the-plugin-configuration-file
-# apiVersion: v1
-# kind: ConfigMap
-# metadata:
-#   name: vela-cmp
-#   namespace: argocd
-# data:
-#   plugin.yaml: |
-#     apiVersion: argoproj.io/v1alpha1
-#     kind: ConfigManagementPlugin
-#     metadata:
-#       name: vela
-#     spec:
-#       version: v1.0
-#       init:
-#         command: ["vela", "traits"]
-#       generate:
-#         command: ["sh"]
-#         args:
-#           - -c
-#           - |
-#             vela dry-run -f test-argo-oam.yml
-#       discover:
-#         # fileName: "-oam.yml*"
-#         find:
-#           # This does the same thing as fileName, but it supports double-start (nested directory) glob patterns.
-#           glob: "**/*oam*.yml"
+# Integration with KubeVela. See: https://www.cncf.io/blog/2020/12/22/argocd-kubevela-gitops-with-developer-centric-experience/
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vela-kubeconfig
+  namespace: argocd
+data:
+  config: |
+    apiVersion: v1
+    kind: Config
+    preferences: {}
+    current-context: minikube
+    clusters:
+    - cluster:
+        certificate-authority: /home/tomas/.minikube/ca.crt
+        extensions:
+        - extension:
+            last-update: Mon, 20 May 2024 20:51:31 CEST
+            provider: minikube.sigs.k8s.io
+            version: v1.31.2
+          name: cluster_info
+        server: https://127.0.0.1:65254
+      name: minikube
+    contexts:
+    - context:
+        cluster: minikube
+        extensions:
+        - extension:
+            last-update: Mon, 20 May 2024 20:51:31 CEST
+            provider: minikube.sigs.k8s.io
+            version: v1.31.2
+          name: context_info
+        namespace: argocd
+        user: minikube
+      name: minikube
+    users:
+    - name: minikube
+      user:
+        client-certificate: /home/tomas/.minikube/profiles/minikube/client.crt
+        client-key: /home/tomas/.minikube/profiles/minikube/client.key
