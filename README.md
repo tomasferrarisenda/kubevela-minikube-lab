@@ -127,17 +127,17 @@ Create these two repository secrets on your GitHub repo:
 ### Fork and clone the repo
 Let's turn this whole deployment into your own thing.
 
-1. Fork this repo. Keep the repository name "backstage-minikube-lab-reloaded".
+1. Fork this repo. Keep the repository name "kubevela-minikube-lab".
 1. Clone the repo from your fork:
 
 ```bash
-git clone https://github.com/<your-github-username>/backstage-minikube-lab-reloaded.git
+git clone https://github.com/<your-github-username>/kubevela-minikube-lab.git
 ```
 
 2. Move into the directory:
 
 ```bash
-cd backstage-minikube-lab-reloaded
+cd kubevela-minikube-lab
 ```
 
 2. Run the initial setup script. Come back when you are done:
