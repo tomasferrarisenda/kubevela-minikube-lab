@@ -37,13 +37,13 @@
 </br>
 
 # INTRODUCTION
-This is a spin-off of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) DevOps project. While working on the [Braindamage Edition](https://github.com/tferrari92/automate-all-the-things-braindamage) - which will include a Developer Portal built with Backstage - I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
+<!-- This is a spin-off of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) DevOps project. While working on the [Braindamage Edition](https://github.com/tferrari92/automate-all-the-things-braindamage) - which will include a Developer Portal built with Backstage - I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
 
 Backstage is a framework for creating developer portals. This developer portal should act as a centralized hub for your organization, providing access to documentation, infrastructure, tooling, and code standards. It gives developers everything they need to create and manage their projects in a consistent and standardized manner. If you are new to Backstage, I invite you to read [this brilliant series of articles](https://www.kosli.com/blog/evaluating-backstage-1-why-backstage/) by Alexandre Couedelo.
 
 We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Pattern. There is some extra information [here](/docs/argocd-notes.md), but you are expected to know about these things.
 
-For a simpler implementation of Backstage check out the [Backstage Minikube Lab regular edition](https://github.com/tferrari92/backstage-minikube-lab).
+For a simpler implementation of Backstage check out the [Backstage Minikube Lab regular edition](https://github.com/tferrari92/backstage-minikube-lab). -->
 
 </br>
 </br>
@@ -53,9 +53,9 @@ For a simpler implementation of Backstage check out the [Backstage Minikube Lab 
 - minikube installed
 - kubectl installed
 - helm installed
-- nodejs installed
+<!-- - nodejs installed
 - nvm installed
-- yarn installed
+- yarn installed -->
 
 </br>
 </br>
@@ -69,12 +69,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 ``` -->
 
-Make sure you are using Node.js version 18
+<!-- Make sure you are using Node.js version 18
 ```bash
 nvm install 18
 nvm use 18
 nvm alias default 18
-```
+``` -->
 <!-- 
 Install nodejs and npm
 ```bash
@@ -83,14 +83,14 @@ sudo apt install nodejs
 sudo apt install npm
 ``` -->
 
-Make sure you are using Yarn version 1.22.19
+<!-- Make sure you are using Yarn version 1.22.19 -->
 <!-- # sudo npm install --global yarn -->
-```bash
+<!-- ```bash
 yarn set version 1.22.19
 yarn --version
-```
+``` -->
 <!-- # yarn global add concurrently -->
-</br>
+<!-- </br>
 
 ### Get GitHub PAT (Personal Access Token)
 
@@ -122,7 +122,7 @@ Create these two repository secrets on your GitHub repo:
 3. Click on "Generate a new client secret".
 4. Save Client ID and Secret somewhere safe.
 
-</br>
+</br> -->
 
 ### Fork and clone the repo
 Let's turn this whole deployment into your own thing.
