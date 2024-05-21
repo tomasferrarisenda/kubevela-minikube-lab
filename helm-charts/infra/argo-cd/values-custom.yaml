@@ -28,14 +28,14 @@ configs:
       return hs
 
     # Integration with KubeVela. See: https://www.cncf.io/blog/2020/12/22/argocd-kubevela-gitops-with-developer-centric-experience/
-    configManagementPlugins: |
-      - name: vela
-        init:
-          command: ["sh", "-xc"]
-          args: ["vela traits"]
-        generate:
-          command: ["sh", "-xc"]
-          args: ["vela export"]
+    # configManagementPlugins: |
+    #   - name: vela
+    #     init:
+    #       command: ["sh", "-xc"]
+    #       args: ["vela traits"]
+    #     generate:
+    #       command: ["sh", "-xc"]
+    #       args: ["vela export"]
 
     accounts.backstage-service-account: apiKey, login
     accounts.frontend: apiKey, login
@@ -64,31 +64,31 @@ configs:
       accounts.database.password: '$2a$10$4NRIsDFel0OaYPy9bAgedeycShVrK2kTNUap4TzHoFm1bUpjuE/z2' # database
 
 # Integration with KubeVela. See: https://www.cncf.io/blog/2020/12/22/argocd-kubevela-gitops-with-developer-centric-experience/
-repoServer:
-  env:
-  - name: KUBECONFIG
-    value: /home/argocd/.kube/config
+# repoServer:
+#   env:
+#   - name: KUBECONFIG
+#     value: /home/argocd/.kube/config
 
-  volumeMounts:
-  - mountPath: /usr/local/bin/vela
-    name: custom-tools
-    subPath: vela
-  - mountPath: /home/argocd/.kube/
-    name: vela-kubeconfig
+#   volumeMounts:
+#   - mountPath: /usr/local/bin/vela
+#     name: custom-tools
+#     subPath: vela
+#   - mountPath: /home/argocd/.kube/
+#     name: vela-kubeconfig
 
-  initContainers:
-  - name: download-tools
-    image: oamdev/argo-tool:v1
-    command: [sh, -c]
-    args:
-    - cp /app/vela /custom-tools/vela
-    volumeMounts:
-    - mountPath: /custom-tools
-      name: custom-tools
+#   initContainers:
+#   - name: download-tools
+#     image: oamdev/argo-tool:v1
+#     command: [sh, -c]
+#     args:
+#     - cp /app/vela /custom-tools/vela
+#     volumeMounts:
+#     - mountPath: /custom-tools
+#       name: custom-tools
 
-  volumes:
-  - name: custom-tools
-    emptyDir: {}
-  - name: vela-kubeconfig
-    configMap:
-      name: vela-kubeconfig
+#   volumes:
+#   - name: custom-tools
+#     emptyDir: {}
+#   - name: vela-kubeconfig
+#     configMap:
+#       name: vela-kubeconfig
