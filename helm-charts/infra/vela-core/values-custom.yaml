@@ -1,2 +1,17 @@
 multicluster:
   enabled: false
+
+featureGates:
+  # gzipResourceTracker: false
+  # zstdResourceTracker: true
+  applyOnce: true
+  # multiStageComponentApply: true
+  # gzipApplicationRevision: false
+  # zstdApplicationRevision: true
+  # preDispatchDryRun: true
+  # validateComponentWhenSharding: false
+  # disableWebhookAutoSchedule: false
+  # disableBootstrapClusterInfo: false
+  # informerCacheFilterUnnecessaryFields: true
+  # sharedDefinitionStorageForApplicationRevision: true
+  # disableWorkflowContextConfigMapCache: true
