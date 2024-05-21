@@ -22,7 +22,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: nginx-app
-  namespace: my-app-dev
+  # namespace: my-app-dev
 spec:
   components:
   - name: nginx
