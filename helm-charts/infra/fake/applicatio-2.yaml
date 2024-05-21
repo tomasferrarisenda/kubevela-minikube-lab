@@ -1,0 +1,43 @@
+# apiVersion: core.oam.dev/v1beta1
+# kind: Application
+# metadata:
+#   name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}-application
+#   namespace: my-app-dev
+# spec:
+#   components:
+#     - name: {{ .Values.system }}-{{ .Values.service }}-{{ .Values.environment }}
+#       type: webservice
+#       properties:
+#         image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
+#         ports:
+#         - port: 80
+#           expose: true
+#       traits:
+#         - type: gateway     
+#           properties:
+#             http: 
+#               "/": 80 
+
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: nginx-app
+  # namespace: my-app-dev
+spec:
+  components:
+  - name: nginx
+    properties:
+      image: nginx:1.20.0
+      # Integration with KubeVela. See: https://kubevela.io/blog/2023/01/06/kubevela-argocd-integration/#3-configure-argo-cd-to-watch-this-repo-for-git-pushes
+      env:
+        - name: "TARGET"
+          value: "ArgoCD"
+      ports:
+      - expose: true
+        port: 80
+    traits:
+    - properties:
+        http:
+          /: 80
+      type: gateway
+    type: webservice
