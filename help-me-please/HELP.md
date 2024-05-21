@@ -53,3 +53,10 @@ spec:
 <p title="Banner" align="center"> <img src="https://i.imgur.com/G64AWEM.png"> </p>
 
 <p title="Banner" align="center"> <img src="https://i.imgur.com/0xC253X.png"> </p>
+
+
+## Terminal
+<p title="Banner" align="center"> <img src="https://i.imgur.com/oOsLYhh.png"> </p>
+
+## Vela core pod logs
+[Click here](/help-me-please/vela-core-logs.txt)
