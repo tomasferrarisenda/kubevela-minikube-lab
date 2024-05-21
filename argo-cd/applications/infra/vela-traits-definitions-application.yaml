@@ -1,22 +1,22 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: vela-traits-definitions
-#   namespace: argocd
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io # Adding the finalizer enables cascading deletes when implementing the App of Apps pattern. If this isn't used, when you remove the application yaml from git, the application will be removed from ArgoCD but the resources will remain active in the cluster
-# spec:  
-#   destination:
-#     namespace: vela-system
-#     server: https://kubernetes.default.svc
-#   project: default
-#   source:
-#     repoURL: https://github.com/tomasferrarisenda/kubevela-minikube-lab.git # This value was modified by the initial-setup python script
-#     path: helm-charts/infra/vela-traits-definitions
-#     directory:
-#       recurse: true
-#       jsonnet: {}
-#   syncPolicy:
-#     automated:
-#       selfHeal: true
-#       prune: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vela-traits-definitions
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io # Adding the finalizer enables cascading deletes when implementing the App of Apps pattern. If this isn't used, when you remove the application yaml from git, the application will be removed from ArgoCD but the resources will remain active in the cluster
+spec:  
+  destination:
+    namespace: vela-system
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://github.com/tomasferrarisenda/kubevela-minikube-lab.git # This value was modified by the initial-setup python script
+    path: helm-charts/infra/vela-traits-definitions
+    directory:
+      recurse: true
+      jsonnet: {}
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
