@@ -48,6 +48,8 @@ spec:
     type: webservice
 ```
 
+
+### Argo UI
 <p title="Banner" align="center"> <img src="https://i.imgur.com/G64AWEM.png"> </p>
 
 <p title="Banner" align="center"> <img src="https://i.imgur.com/0xC253X.png"> </p>
